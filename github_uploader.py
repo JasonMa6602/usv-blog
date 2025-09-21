@@ -42,25 +42,26 @@ def get_repo_info():
         return False
 
 def setup_remote():
-    """Setup GitHub remote repository with multiple options"""
+    """Setup GitHub remote repository with automatic detection and quick setup"""
     print("\n🔧 Setting up GitHub remote repository...")
     
-    # Get GitHub username first
-    print("\n📋 Let's set up your GitHub repository!")
-    print("You have 3 options:")
-    print("1. Enter existing repository URL")
-    print("2. Create new repository (I'll guide you)")
-    print("3. Use default repository name 'blog'")
+    # Default repository URL - change this to your repository
+    DEFAULT_REPO_URL = "https://github.com/JasonMa6602/usv-blog.git"
+    
+    print("\n📋 Repository Setup Options:")
+    print("1. ✅ Use default repository (JasonMa6602/usv-blog)")
+    print("2. 📝 Enter custom repository URL")
+    print("3. 🆘 Create new repository with guidance")
     
     try:
-        choice = input("\nChoose option (1/2/3) or press Enter for default: ").strip()
+        choice = input(f"\nChoose option (1/2/3) or press Enter for default [{DEFAULT_REPO_URL}]: ").strip()
         
-        if choice == "1":
+        if choice == "2":
             repo_url = input("Enter your GitHub repository URL (e.g., https://github.com/username/repo.git): ").strip()
             if not repo_url:
-                print("❌ Repository URL cannot be empty")
-                return False
-        elif choice == "2":
+                print("❌ Repository URL cannot be empty, using default")
+                repo_url = DEFAULT_REPO_URL
+        elif choice == "3":
             repo_name = input("Enter repository name (default: 'blog'): ").strip() or "blog"
             repo_desc = input("Enter repository description (optional): ").strip()
             print(f"\n🌐 To create repository, visit: https://github.com/new")
@@ -70,23 +71,17 @@ def setup_remote():
             print(f"   Then copy the repository URL and enter it here:")
             repo_url = input("Repository URL: ").strip()
             if not repo_url:
-                print("❌ Repository URL cannot be empty")
-                return False
+                print("❌ Repository URL cannot be empty, using default")
+                repo_url = DEFAULT_REPO_URL
         else:
-            # Default option - use 'blog' and provide instructions
-            print(f"\n🌐 Creating default repository 'blog':")
-            print("   Visit: https://github.com/new")
-            print("   Repository name: blog")
-            print("   Don't initialize with README (you already have one)")
-            print("   Then copy the repository URL and enter it here:")
-            repo_url = input("Repository URL: ").strip()
-            if not repo_url:
-                print("❌ Repository URL cannot be empty")
-                return False
+            # Default option - use the predefined repository
+            repo_url = DEFAULT_REPO_URL
+            print(f"✅ Using default repository: {repo_url}")
+            print("   If this is incorrect, run script again and choose option 2")
     
     except (KeyboardInterrupt, EOFError):
-        print("\n\n❌ Setup cancelled by user")
-        return False
+        print("\n\n❌ Setup cancelled by user, using default repository")
+        repo_url = DEFAULT_REPO_URL
     
     # Add remote
     if run_command(f"git remote add origin {repo_url}", "Adding remote origin"):
