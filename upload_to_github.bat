@@ -1,0 +1,6 @@
+@echo off
+echo 🚀 Starting GitHub Blog Uploader...
+python github_uploader.py
+echo.
+echo Press any key to exit...
+pause > nul

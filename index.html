@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unmanned Surface Vehicles Blog - USV Technology & Innovation</title>
+    <meta name="description" content="Explore the latest developments in Unmanned Surface Vehicle technology, autonomous marine systems, and USV applications across defense, commercial, and research sectors.">
+    <meta name="keywords" content="USV, unmanned surface vehicles, autonomous marine systems, USV technology, marine robotics, naval drones, maritime autonomy">
+    <meta name="author" content="USV Blog Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Unmanned Surface Vehicles Blog - USV Technology & Innovation">
+    <meta property="og:description" content="Your source for unmanned surface vehicle technology and innovation. Explore the latest developments in USV technology, autonomous marine systems, and applications.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop">
+    <meta property="og:url" content="https://jasonma6602.github.io/usv-blog/index.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="USV Blog">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Unmanned Surface Vehicles Blog - USV Technology & Innovation">
+    <meta name="twitter:description" content="Explore the latest developments in USV technology, autonomous marine systems, and applications.">
+    <meta name="twitter:image" content="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&h=600&fit=crop">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jasonma6602.github.io/usv-blog/index.html">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "USV Blog",
+        "url": "https://jasonma6602.github.io/usv-blog/index.html",
+        "description": "Your source for unmanned surface vehicle technology and innovation",
+        "publisher": {
+            "@type": "Organization",
+            "name": "USV Blog",
+            "url": "https://jasonma6602.github.io/usv-blog/index.html",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://jasonma6602.github.io/usv-blog/favicon.ico"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+0086-15994264083",
+                "contactType": "customer service",
+                "email": "info@oceangreenbay.com"
+            }
+        },
+        "mainEntity": {
+            "@type": "Blog",
+            "name": "USV Blog",
+            "description": "Exploring unmanned surface vehicle technology and innovation",
+            "url": "https://jasonma6602.github.io/usv-blog/index.html"
+        }
+    }
+    </script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-ship text-2xl"></i>
+                    <h1 class="text-xl font-bold">USV Blog</h1>
+                </div>
+                <div class="hidden md:flex space-x-6">
+                    <a href="#home" class="hover:text-blue-300 transition">Home</a>
+                    <a href="#articles" class="hover:text-blue-300 transition">Articles</a>
+                    <a href="#technology" class="hover:text-blue-300 transition">Technology</a>
+                    <a href="#applications" class="hover:text-blue-300 transition">Applications</a>
+                    <a href="#contact" class="hover:text-blue-300 transition">Contact</a>
+                </div>
+                <button class="md:hidden" onclick="toggleMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4">
+                <a href="#home" class="block py-2 hover:text-blue-300">Home</a>
+                <a href="#articles" class="block py-2 hover:text-blue-300">Articles</a>
+                <a href="#technology" class="block py-2 hover:text-blue-300">Technology</a>
+                <a href="#applications" class="block py-2 hover:text-blue-300">Applications</a>
+                <a href="#contact" class="block py-2 hover:text-blue-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Unmanned Surface Vehicles</h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Exploring the cutting-edge technology and applications of autonomous marine systems</p>
+            <button class="bg-white text-blue-900 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition transform hover:scale-105" onclick="scrollToArticles()">
+                Explore Articles
+            </button>
+        </div>
+    </section>
+
+    <!-- Articles Section with Enhanced Layout -->
+    <section id="articles" class="py-16">
+        <div class="container mx-auto px-4">
+            <!-- Section Header with Search and Filter -->
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4 md:mb-0">Latest Articles</h2>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- Search Bar -->
+                    <div class="relative">
+                        <input type="text" id="searchInput" placeholder="Search articles..." 
+                               class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-64">
+                        <i class="fas fa-search absolute left-3 top-3 text-gray-400"></i>
+                    </div>
+                    <!-- Category Filter -->
+                    <select id="categoryFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="all">All Categories</option>
+                        <option value="technology">Technology</option>
+                        <option value="defense">Defense</option>
+                        <option value="research">Research</option>
+                        <option value="diy">DIY & Construction</option>
+                        <option value="commercial">Commercial</option>
+                    </select>
+                    <!-- Sort Options -->
+                    <select id="sortFilter" class="px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Articles Grid - Enhanced for Scalability -->
+            <div id="articlesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <!-- Articles will be dynamically loaded here -->
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loadingIndicator" class="hidden text-center py-8">
+                <div class="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                <p class="mt-2 text-gray-600">Loading more articles...</p>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button id="loadMoreBtn" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition transform hover:scale-105">
+                    Load More Articles
+                </button>
+            </div>
+
+            <!-- No Results Message -->
+            <div id="noResults" class="hidden text-center py-12">
+                <i class="fas fa-search text-4xl text-gray-400 mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-600 mb-2">No articles found</h3>
+                <p class="text-gray-500">Try adjusting your search or filter criteria</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Section -->
+    <section id="technology" class="bg-gray-100 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">USV Technologies</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow text-center hover-card">
+                    <i class="fas fa-satellite text-4xl text-blue-600 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">GPS Navigation</h3>
+                    <p class="text-gray-600">Precision positioning and route planning systems</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center hover-card">
+                    <i class="fas fa-eye text-4xl text-green-600 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Computer Vision</h3>
+                    <p class="text-gray-600">Object detection and obstacle avoidance</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center hover-card">
+                    <i class="fas fa-wifi text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Communication</h3>
+                    <p class="text-gray-600">Satellite and radio communication systems</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow text-center hover-card">
+                    <i class="fas fa-battery-full text-4xl text-orange-600 mb-4"></i>
+                    <h3 class="text-lg font-bold mb-2">Power Systems</h3>
+                    <p class="text-gray-600">Advanced battery and propulsion technologies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">USV Applications</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-card">
+                    <i class="fas fa-search text-3xl text-blue-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Marine Research</h3>
+                    <p class="text-gray-600 mb-4">USVs collect oceanographic data, monitor marine life, and conduct environmental surveys without human presence.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Water quality monitoring</li>
+                        <li>• Marine life tracking</li>
+                        <li>• Climate research</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-card">
+                    <i class="fas fa-shield-alt text-3xl text-red-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Defense & Security</h3>
+                    <p class="text-gray-600 mb-4">Military applications include surveillance, mine detection, and anti-submarine warfare operations.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Coastal surveillance</li>
+                        <li>• Mine countermeasures</li>
+                        <li>• Force protection</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-card">
+                    <i class="fas fa-industry text-3xl text-green-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Commercial Operations</h3>
+                    <p class="text-gray-600 mb-4">Commercial uses include offshore inspections, cargo transport, and fishing industry support.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Pipeline inspections</li>
+                        <li>• Cargo transport</li>
+                        <li>• Fishing support</li>
+                    </ul>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-lg hover-card">
+                    <i class="fas fa-exclamation-triangle text-3xl text-orange-600 mb-4"></i>
+                    <h3 class="text-xl font-bold mb-3">Search & Rescue</h3>
+                    <p class="text-gray-600 mb-4">USVs assist in emergency response operations, providing rapid deployment in dangerous conditions.</p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li>• Emergency response</li>
+                        <li>• Disaster relief</li>
+                        <li>• Personnel recovery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="bg-blue-900 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-4">Stay Updated</h2>
+            <p class="text-xl mb-8">Get the latest USV news and insights delivered to your inbox</p>
+            <form class="max-w-md mx-auto flex gap-4">
+                <input type="email" placeholder="Enter your email" class="flex-1 px-4 py-3 rounded-lg text-gray-800">
+                <button type="submit" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-ship text-2xl"></i>
+                        <h3 class="text-xl font-bold">USV Blog</h3>
+                    </div>
+                    <p class="text-gray-400">Your source for unmanned surface vehicle technology and innovation.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Categories</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Technology</a></li>
+                        <li><a href="#" class="hover:text-white">Research</a></li>
+                        <li><a href="#" class="hover:text-white">Defense</a></li>
+                        <li><a href="#" class="hover:text-white">Commercial</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Resources</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white">Documentation</a></li>
+                        <li><a href="#" class="hover:text-white">White Papers</a></li>
+                        <li><a href="#" class="hover:text-white">Industry Reports</a></li>
+                        <li><a href="#" class="hover:text-white">Events</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Contact</h4>
+                    <div class="space-y-2 text-gray-400">
+                        <p><i class="fas fa-envelope mr-2"></i>info@oceangreenbay.com</p>
+                        <p><i class="fas fa-phone mr-2"></i>+0086-15994264083</p>
+                        <div class="flex space-x-4 mt-4">
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin text-xl"></i></a>
+                            <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 USV Blog. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Enhanced JavaScript for Dynamic Functionality -->
+    <script>
+        // Article data - can be expanded with more articles
+        const articlesData = [
+            {
+                id: 11,
+                title: "Research on Unmanned Surface Vehicles Environment Perception Based on the Fusion of Vision and Lidar",
+                description: "A study on the environmental perception of Unmanned Surface Vehicles (USV) by fusing data from lidar and vision sensors to improve autonomous navigation.",
+                category: "research",
+                date: "2021-02-08",
+                image: "https://huggingface.co/datasets/jason1966/usv-dataset/resolve/main/access-gagraphic-3057863.jpg",
+                link: "blog-post-11.html",
+                tags: ["Research", "Lidar", "Vision", "Autonomous Navigation"]
+            },
+            {
+                id: 1,
+                title: "Operative Unmanned Surface Vessels (USVs): A Review of Market-Ready Solutions",
+                description: "Comprehensive review of market-ready USV solutions, examining technological evolution, design characteristics, and applications across multiple industries.",
+                category: "research",
+                date: "2025-04-23",
+                image: "https://pub.mdpi-res.com/automation/automation-06-00017/article_deploy/html/images/automation-06-00017-g003.png",
+                link: "blog-post-7.html",
+                tags: ["Market Analysis", "Research", "Technology Review"]
+            },
+            {
+                id: 2,
+                title: "Joint Venture to Expand Production of AUSVs for Military & Civilian Applications",
+                description: "Kraken Technology Group and NVL form strategic partnership to scale autonomous uncrewed surface vessel manufacturing.",
+                category: "defense",
+                date: "2025-08-27",
+                image: "https://www.defenseadvancement.com/wp-content/uploads/2025/08/Joint-Venture-to-Expand-Production-of-AUSVs-for-Military-Civilian-Applications-1024x563.jpg",
+                link: "blog-post-5.html",
+                tags: ["Joint Venture", "Manufacturing", "Defense"]
+            },
+            {
+                id: 3,
+                title: "Unmanned Surface Vehicles Being Deployed for Range of Applications",
+                description: "USVs are increasingly deployed for offshore inspection, survey market, oil and gas facilities, and wind farm operations.",
+                category: "commercial",
+                date: "2023-08-09",
+                image: "https://img.offshore-mag.com/files/base/ebm/os/image/2023/07/3._Blue_Essence_Fugro.64b1e4130465c.png?auto=format,compress&fit=fill&fill=blur&w=1200&h=630",
+                link: "blog-post-6.html",
+                tags: ["Offshore", "Inspection", "Wind Farms"]
+            },
+            {
+                id: 4,
+                title: "The Future of Autonomous Marine Navigation",
+                description: "Discover how AI and machine learning are revolutionizing unmanned surface vehicle navigation systems.",
+                category: "technology",
+                date: "2025-03-15",
+                image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop",
+                link: "blog-post-1.html",
+                tags: ["AI", "Navigation", "Machine Learning"]
+            },
+            {
+                id: 5,
+                title: "Ukraine's Original Naval Drone Revealed",
+                description: "The revolutionary Magura V1 that changed naval warfare and ushered in a new era of USV combat operations.",
+                category: "defense",
+                date: "2025-07-30",
+                image: "https://www.navalnews.com/wp-content/uploads/2025/07/Ukraine-USV-Magura-V1-V2-drones.jpg",
+                link: "blog-post-4.html",
+                tags: ["Military", "Combat", "Innovation"]
+            },
+            {
+                id: 6,
+                title: "3D Printed USV Hull Files Available",
+                description: "Explore the n3m0 autonomous boat project and learn about 3D printing USV hulls for DIY construction.",
+                category: "diy",
+                date: "2017-06-30",
+                image: "https://us1.discourse-cdn.com/flex019/uploads/bluerobotics/original/2X/4/4a513aa9134740425a4b7275eeafb28e55ed4db8.jpg",
+                link: "blog-post-2.html",
+                tags: ["3D Printing", "DIY", "Construction"]
+            },
+            {
+                id: 7,
+                title: "USV Developments and Challenges",
+                description: "Comprehensive overview of USV developments, guidance navigation and control systems, and future directions.",
+                category: "research",
+                date: "2016-01-01",
+                image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+                link: "blog-post-3.html",
+                tags: ["Research", "GNC", "Future"]
+            },
+            {
+                id: 10,
+                title: "Commercial USV Applications in Offshore Industries",
+                description: "Exploring how unmanned surface vehicles are revolutionizing offshore operations, from oil and gas to wind farm maintenance.",
+                category: "commercial",
+                date: "2025-09-15",
+                image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=400&h=250&fit=crop",
+                link: "blog-post-10.html",
+                tags: ["Commercial", "Offshore", "Oil & Gas", "Wind Farms"]
+            },
+        ];
+        let currentPage = 1;
+        const articlesPerPage = 10; // Increased to display more articles initially
+        let filteredArticles = [...articlesData];
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            renderArticles();
+            setupEventListeners();
+        });
+
+        function setupEventListeners() {
+            // Search functionality
+            document.getElementById('searchInput').addEventListener('input', function() {
+                filterArticles();
+            });
+
+            // Category filter
+            document.getElementById('categoryFilter').addEventListener('change', function() {
+                filterArticles();
+            });
+
+            // Sort filter
+            document.getElementById('sortFilter').addEventListener('change', function() {
+                sortArticles();
+            });
+
+            // Load more button
+            document.getElementById('loadMoreBtn').addEventListener('click', function() {
+                loadMoreArticles();
+            });
+        }
+
+        function filterArticles() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const category = document.getElementById('categoryFilter').value;
+
+            filteredArticles = articlesData.filter(article => {
+                const matchesSearch = article.title.toLowerCase().includes(searchTerm) || 
+                                    article.description.toLowerCase().includes(searchTerm) ||
+                                    article.tags.some(tag => tag.toLowerCase().includes(searchTerm));
+                const matchesCategory = category === 'all' || article.category === category;
+                return matchesSearch && matchesCategory;
+            });
+
+            currentPage = 1;
+            renderArticles();
+        }
+
+        function sortArticles() {
+            const sortBy = document.getElementById('sortFilter').value;
+            
+            switch(sortBy) {
+                case 'newest':
+                    filteredArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                    break;
+                case 'oldest':
+                    filteredArticles.sort((a, b) => new Date(a.date) - new Date(b.date));
+                    break;
+                case 'title':
+                    filteredArticles.sort((a, b) => a.title.localeCompare(b.title));
+                    break;
+            }
+            
+            currentPage = 1;
+            renderArticles();
+        }
+
+        function renderArticles() {
+            const grid = document.getElementById('articlesGrid');
+            const startIndex = 0;
+            const endIndex = currentPage * articlesPerPage;
+            const articlesToShow = filteredArticles.slice(startIndex, endIndex);
+
+            // Clear existing articles
+            grid.innerHTML = '';
+
+            if (articlesToShow.length === 0) {
+                document.getElementById('noResults').classList.remove('hidden');
+                document.getElementById('loadMoreBtn').classList.add('hidden');
+                return;
+            }
+
+            document.getElementById('noResults').classList.add('hidden');
+
+            // Render articles
+            articlesToShow.forEach(article => {
+                const articleElement = createArticleElement(article);
+                grid.appendChild(articleElement);
+            });
+
+            // Show/hide load more button
+            const loadMoreBtn = document.getElementById('loadMoreBtn');
+            if (endIndex >= filteredArticles.length) {
+                loadMoreBtn.classList.add('hidden');
+            } else {
+                loadMoreBtn.classList.remove('hidden');
+            }
+        }
+
+        function createArticleElement(article) {
+            const articleDiv = document.createElement('article');
+            articleDiv.className = 'bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition fade-in-up';
+            
+            const categoryColors = {
+                technology: 'bg-blue-600',
+                defense: 'bg-red-600',
+                research: 'bg-purple-600',
+                diy: 'bg-green-600',
+                commercial: 'bg-orange-600'
+            };
+
+            const categoryLabels = {
+                technology: 'Technology',
+                defense: 'Defense',
+                research: 'Research',
+                diy: 'DIY & Construction',
+                commercial: 'Commercial'
+            };
+
+            articleDiv.innerHTML = `
+                <img src="${article.image}" alt="${article.title}" class="w-full h-48 object-cover article-image">
+                <div class="p-6">
+                    <span class="${categoryColors[article.category]} text-white px-3 py-1 rounded-full text-sm">${categoryLabels[article.category]}</span>
+                    <h3 class="text-xl font-bold mt-3 mb-2 text-gray-800">${article.title}</h3>
+                    <p class="text-gray-600 mb-4">${article.description}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm text-gray-500">${formatDate(article.date)}</span>
+                        <a href="${article.link}" class="text-blue-600 hover:text-blue-800 font-semibold">Read More →</a>
+                    </div>
+                    <div class="mt-3 flex flex-wrap gap-1">
+                        ${article.tags.map(tag => `<span class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded">${tag}</span>`).join('')}
+                    </div>
+                </div>
+            `;
+            
+            return articleDiv;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        function loadMoreArticles() {
+            currentPage++;
+            renderArticles();
+        }
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function scrollToArticles() {
+            const articlesSection = document.getElementById('articles');
+            if (articlesSection) {
+                articlesSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Back to Top functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        // Show/hide button based on scroll position
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        // Scroll to top when button is clicked
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
