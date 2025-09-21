@@ -42,13 +42,50 @@ def get_repo_info():
         return False
 
 def setup_remote():
-    """Setup GitHub remote repository"""
+    """Setup GitHub remote repository with multiple options"""
     print("\n🔧 Setting up GitHub remote repository...")
     
-    repo_url = input("Enter your GitHub repository URL (e.g., https://github.com/username/repo.git): ").strip()
+    # Get GitHub username first
+    print("\n📋 Let's set up your GitHub repository!")
+    print("You have 3 options:")
+    print("1. Enter existing repository URL")
+    print("2. Create new repository (I'll guide you)")
+    print("3. Use default repository name 'blog'")
     
-    if not repo_url:
-        print("❌ Repository URL cannot be empty")
+    try:
+        choice = input("\nChoose option (1/2/3) or press Enter for default: ").strip()
+        
+        if choice == "1":
+            repo_url = input("Enter your GitHub repository URL (e.g., https://github.com/username/repo.git): ").strip()
+            if not repo_url:
+                print("❌ Repository URL cannot be empty")
+                return False
+        elif choice == "2":
+            repo_name = input("Enter repository name (default: 'blog'): ").strip() or "blog"
+            repo_desc = input("Enter repository description (optional): ").strip()
+            print(f"\n🌐 To create repository, visit: https://github.com/new")
+            print(f"   Repository name: {repo_name}")
+            if repo_desc:
+                print(f"   Description: {repo_desc}")
+            print(f"   Then copy the repository URL and enter it here:")
+            repo_url = input("Repository URL: ").strip()
+            if not repo_url:
+                print("❌ Repository URL cannot be empty")
+                return False
+        else:
+            # Default option - use 'blog' and provide instructions
+            print(f"\n🌐 Creating default repository 'blog':")
+            print("   Visit: https://github.com/new")
+            print("   Repository name: blog")
+            print("   Don't initialize with README (you already have one)")
+            print("   Then copy the repository URL and enter it here:")
+            repo_url = input("Repository URL: ").strip()
+            if not repo_url:
+                print("❌ Repository URL cannot be empty")
+                return False
+    
+    except (KeyboardInterrupt, EOFError):
+        print("\n\n❌ Setup cancelled by user")
         return False
     
     # Add remote
