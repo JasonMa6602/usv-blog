@@ -248,11 +248,6 @@
     </footer>
 
     <!-- Back to Top Button -->
-        <!-- Return to Homepage Button -->
-    <a href="index.html" class="return-home" aria-label="Return to homepage">
-        <i class="fas fa-home"></i>
-    </a>
-
     <button id="backToTop" class="back-to-top" aria-label="Back to top">
         <i class="fas fa-arrow-up"></i>
     </button>
@@ -263,19 +258,6 @@
             menu.classList.toggle('hidden');
         }
     
-                // Return to Homepage functionality
-        const returnHomeButton = document.querySelector('.return-home');
-        if (returnHomeButton) {
-            // Show/hide return home button based on scroll position
-            window.addEventListener('scroll', () => {
-                if (window.pageYOffset > 200) {
-                    returnHomeButton.classList.add('show');
-                } else {
-                    returnHomeButton.classList.remove('show');
-                }
-            });
-        }
-
         // Back to Top functionality
         const backToTopButton = document.getElementById('backToTop');
         
